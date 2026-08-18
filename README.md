@@ -48,6 +48,26 @@ alignment          SFT and RL — turning a next-token predictor into something 
 *(Rough shape of the course — check it against the actual syllabus in week one
 and correct this table. The assignment lineup shifts year to year.)*
 
+### Assignment 1 — Basics (units 1–3)
+
+Lives in [`workspace/assignment1-basics/`](workspace/assignment1-basics/).
+Handout: `cs336_assignment1_basics.pdf`. Environment is already synced.
+
+```sh
+cd workspace/assignment1-basics
+uv run pytest                    # 46 failing, all NotImplementedError — the starting line
+uv run pytest tests/test_train_bpe.py -x   # work one file at a time
+```
+
+You implement in `cs336_basics/`, then wire each piece up in `tests/adapters.py`
+(21 stubs) — that's the only thing the tests touch. Training data is a separate
+download; see the assignment README. It's gitignored, so it stays out of here.
+
+**Suggested order** (each roughly one session): BPE training → tokenizer
+encode/decode → Linear + Embedding → RMSNorm → RoPE → attention → SwiGLU →
+transformer block → full LM → cross-entropy → AdamW → LR schedule + clipping →
+data loader + checkpointing → train a real model on TinyStories.
+
 ## Rules I'm holding myself to
 
 1. **No copying.** Not from the reference solution, not from the lecture repo,

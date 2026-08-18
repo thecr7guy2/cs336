@@ -18,5 +18,9 @@ data/
 *.npy
 *.arrow
 
+# ...but assignment test fixtures and snapshots are required to run the tests
+!**/tests/fixtures/**
+!**/tests/_snapshots/**
+
 # os
 .DS_Store
