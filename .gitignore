@@ -1,0 +1,22 @@
+# python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.ipynb_checkpoints/
+
+# training artifacts — never commit these
+*.pt
+*.pth
+*.bin
+*.safetensors
+checkpoints/
+runs/
+wandb/
+data/
+*.npy
+*.arrow
+
+# os
+.DS_Store
